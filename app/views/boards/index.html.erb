@@ -1,0 +1,14 @@
+
+<div class="container">
+  <h2>All Boards</h2>
+
+  <% @boards.each do |board| %>
+    <div class="card">
+      <div>
+        <p class="card_title"><%= board.name %></p>
+        <p><%= board.description %></p>
+      </div>
+    </div>
+  <% end %>
+  
+</div>
