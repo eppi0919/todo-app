@@ -1,0 +1,39 @@
+<div class="container">
+  <h2>All Boards</h2>
+
+  <% @boards.each do |board| %>
+    <%= link_to  board_path(board) do %>
+      <div class="card">
+        <div>
+          <p class="card_title"><%= board.name %></p>
+          <p class="card_content"><%= board.description %></p>
+          <p class="card_name">name:<%= board.user.display_name %></p>
+        </div>
+
+        <% if user_signed_in? && current_user.boards.exists?(id: board.id) %>
+        <%# current_userのboardsがexists（存在するか）? %>
+          <div class="card_actions">
+            <div class="dropdown">
+              <%= image_tag 'actions.svg', class: 'dropbtn' %>
+              <div class="dropdown-content mini">
+                <a href="#">Edit</a>
+                <a href="#">Delete</a>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+
+      <%# <%= link_to new_board_path do %>
+        <%# <div class="float_btn">
+          <i class="fa fa-plus"></i>
+        </div>
+      <% end %>
+    <% end %>
+  <% end %>
+
+  <div class="card_new">
+    <%= link_to 'Add new board',new_board_path %>
+  </div>
+
+</div>
