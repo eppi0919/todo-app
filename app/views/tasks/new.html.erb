@@ -1,0 +1,25 @@
+<div class="container">
+  <%= form_with(model: @task, url: board_tasks_path(@task.board), method: 'post', local: true) do |f| %>
+
+    <div>
+      <%= f.label :title, 'title' %>
+    </div>
+    <div>
+      <%= f.text_field :title, class: 'text' %>
+    </div>
+    <div>
+      <%= f.label :content, 'content' %>
+    </div>
+    <div>
+      <%= f.text_area :content %>
+    </div>
+    <div>
+      <%= f.label :deadline, 'deadline' %>
+    </div>
+    <div>
+      <%= f.datetime_field :deadline %>
+    </div>
+    <%= f.submit 'Submit', class: 'btn-primary' %>
+  <% end %>
+</div>
+
