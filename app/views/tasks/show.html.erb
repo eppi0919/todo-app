@@ -2,6 +2,12 @@
   <h1><%= @task.title %></h1>
 
   <div class="card">
+    <% if @task.eyecatch.attached? %>
+      <div class="card_image">
+        <%= image_tag @task.eyecatch %>
+      </div>
+    <% end %>
+
     <div>
       <p class="card_content"><%= @task.content %></p>
       <p class="card_name">name:<%= @task.user.display_name %></p>
