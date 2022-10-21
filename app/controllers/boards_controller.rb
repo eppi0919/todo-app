@@ -6,7 +6,7 @@ class BoardsController < ApplicationController
 
   def show
     @board = Board.find(params[:id])
-    @tasks = Task.all
+    @tasks = @board.tasks
   end
 
   def new

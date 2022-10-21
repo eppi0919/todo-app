@@ -12,9 +12,30 @@
   </head>
 
   <body>
-    <%= link_to root_path do%>
-      <p>Boards</p>
-    <% end %>
+    <div class="header">
+      <%= link_to root_path do%>
+        <p>Boards</p>
+      <% end %>
+
+      <ul class="nav">
+        <li class="nav-item"></li>
+          <%= link_to new_user_session_path do%>
+            <p>SingIn</p>
+          <% end %>
+        </li>
+        <li class="nav-item"></li>
+          <%= link_to new_user_registration_path do%>
+            <p>SingUp</p>
+          <% end %>
+        </li>
+        <li class="nav-item"></li>
+          <%= link_to destroy_user_session_path do%>
+            <p>SingOut</p>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+
     <%= yield %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>

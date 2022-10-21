@@ -46,6 +46,9 @@ body {
 a {
   text-decoration: none;
   color: $text-base-color;
+  &:hover{
+    opacity: 0.7;
+  }
 }
 
 .container {
@@ -67,5 +70,20 @@ a {
 
   i {
     margin-top: 22px;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  ul {
+    display: flex;
+    margin-right: 50px;
+    padding: 10px auto;
+    li {
+      list-style: none;
+      margin-left: 10px;
+      
+    }
   }
 }
