@@ -16,8 +16,8 @@
             <div class="dropdown">
               <%= image_tag 'actions.svg', class: 'dropbtn' %>
               <div class="dropdown-content mini">
-                <a href="#">Edit</a>
-                <a href="#">Delete</a>
+                <%= link_to "BoardEdit", edit_board_path(board) %>
+                <%= link_to "BoardDelete", board_path(board), data: {method: "delete"} %>
               </div>
             </div>
           </div>
