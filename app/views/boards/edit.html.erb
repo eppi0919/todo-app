@@ -1,0 +1,19 @@
+<p>board edit</p>
+
+<div class="container">
+  <%= form_with(model: @board, url: board_path(@board), method: 'put', local: true) do |f| %>
+    <div>
+      <%= f.label :name, 'Name' %>
+    </div>
+    <div>
+      <%= f.text_field :name, class: 'text' %>
+    </div>
+    <div>
+      <%= f.label :description, 'Description' %>
+    </div>
+    <div>
+      <%= f.text_area :description %>
+    </div>
+    <%= f.submit 'Submit', class: 'btn-primary' %>
+  <% end %>
+</div>

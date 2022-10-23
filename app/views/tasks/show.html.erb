@@ -19,8 +19,8 @@
         <div class="dropdown">
           <%= image_tag 'actions.svg', class: 'dropbtn' %>
           <div class="dropdown-content mini">
-            <a href="#">Edit</a>
-            <a href="#">Delete</a>
+            <%= link_to "CardEdit", edit_board_task_path(@task) %>
+            <%= link_to "CardDelete", board_task_path(@task), data: {method: "delete"} %>
           </div>
         </div>
       </div>
